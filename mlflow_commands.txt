@@ -1,0 +1,3 @@
+# this telling the mlflow that we want to save all the artifacts
+# and metadata in a sqlite which is one ofe the alternatives of the backend stroe
+mlflow ui --backend-store-uri sqlite:///mlflow.db
