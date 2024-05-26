@@ -33,6 +33,7 @@ def run_train(data_path: str):
         mlflow.log_param("max-depth", "10")
 
         rf = RandomForestRegressor(max_depth=10, random_state=0)
+
         rf.fit(X_train, y_train)
         y_pred = rf.predict(X_val)
 

@@ -1,3 +1,18 @@
 # this telling the mlflow that we want to save all the artifacts
-# and metadata in a sqlite which is one ofe the alternatives of the backend stroe
+# and metadata in a sqlite which is one of the alternatives of the backend stroe
 mlflow ui --backend-store-uri sqlite:///mlflow.db
+
+
+# To launch an MLflow tracking server on your local machine, you need to follow these steps:
+
+1. Create necessary directories: Create directories for your SQLite database and artifact storage.
+
+mkdir -p /path/to/mlflow/artifacts
+touch /path/to/mlflow/mlflow.db
+
+2. Launch the MLflow tracking server: You can launch the server using the following command, configuring the backend store to use SQLite and the artifact store to use a local directory.
+mlflow server \
+    --backend-store-uri sqlite:///path/to/mlflow/mlflow.db \
+    --default-artifact-root /path/to/mlflow/artifacts \
+    --serve-artifacts
+
